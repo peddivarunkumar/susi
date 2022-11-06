@@ -1,5 +1,6 @@
 <h3>Search Results</h3>
-<table>
+<div class="table-responsive">
+<table class="table table-bordered table-hover">
  <tr>
    <th>
      Name
@@ -11,7 +12,7 @@
      Bag
    </th>
    <th>
-     Phone Numbers
+     Phone Number
    </th>
    <th>
      Date
@@ -27,9 +28,11 @@
      <td><%= result.name %></td>
      <td><%= result.village %></td>
      <td><%= result.bags %></td>
+     <td><%= result.phone %></td>
      <td><%= result.created_at%></td>
      <td><%= link_to "show", customer_path(result)%></td>
    </tr>
 
 <% end %>
 </table>
+</div>

@@ -24,12 +24,16 @@
     <%= form.text_field :phone_cont %>
   </div>
 
-  <div>
+  <div style="margin-top: 20px; margin-bottom: 30px;">
     <%= form.submit 'Search customer' %>
   </div>
 <% end %>
 
 
 
-<%= link_to "New customer", new_customer_path %>
+<%= link_to controller: "customers" , action: "new"  do %>
+   <button>
+     New Customer
+   </button>
+<% end %>
 </div>
