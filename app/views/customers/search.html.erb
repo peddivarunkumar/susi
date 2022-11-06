@@ -1,0 +1,35 @@
+<h3>Search Results</h3>
+<table>
+ <tr>
+   <th>
+     Name
+   </th>
+   <th>
+     Village
+   </th>
+   <th>
+     Bag
+   </th>
+   <th>
+     Phone Numbers
+   </th>
+   <th>
+     Date
+   </th>
+   <th>
+    show user
+   </th>
+ </tr>
+
+  
+<% @results.each do |result| %>
+   <tr>
+     <td><%= result.name %></td>
+     <td><%= result.village %></td>
+     <td><%= result.bags %></td>
+     <td><%= result.created_at%></td>
+     <td><%= link_to "show", customer_path(result)%></td>
+   </tr>
+
+<% end %>
+</table>
