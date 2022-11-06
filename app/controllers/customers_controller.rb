@@ -3,6 +3,7 @@ class CustomersController < ApplicationController
 
   # GET /customers or /customers.json
   def index
+    @q = Customer.ransack(params[:q])
     @customers = Customer.all
   end
 
@@ -58,11 +59,8 @@ class CustomersController < ApplicationController
   end
 
   def search
-    if customer_params[:name].blank? and customer_params[:village].blank? and customer_params[:bags].blank? and customer_params[:phone].blank?
-      redirect_to customers_path and return
-    end
-    @results = Customer.where("lower(name) LIKE :n or bags = :b and lower(village) LIKE :v or phone LIKE :p ", {n: "%#{customer_params[:name]}%", b:"%#{customer_params[:bags]}%",v:"%#{customer_params[:village]}%",p:"%#{customer_params[:phone]}%"})
-    puts @results
+    @q = Customer.ransack(params[:q])
+    @results = @q.result(distinct: true)
   end
 
   private

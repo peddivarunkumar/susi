@@ -13,6 +13,3 @@
  *= require_tree .
  *= require_self
  */
-th , td {
-    margin-right: 10px;
-}

@@ -1,27 +1,27 @@
 <p style="color: green"><%= notice %></p>
-
+<div style="text-align: center">
 <h1>Customers</h1>
 
-<%= form_with(model: Customer.new, url: '/search', method: "get") do |form| %>
+<%= search_form_for( @q, url: '/search', method: "get") do |form| %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :name_cont, style: "display: block" %>
+    <%= form.text_field :name_cont %>
   </div>
 
   <div>
-    <%= form.label :village, style: "display: block" %>
-    <%= form.text_field :village %>
+    <%= form.label :village_cont, style: "display: block" %>
+    <%= form.text_field :village_cont %>
   </div>
 
   <div>
-    <%= form.label :bags, style: "display: block" %>
-    <%= form.text_field :bags %>
+    <%= form.label :bags_cont, style: "display: block" %>
+    <%= form.text_field :bags_cont %>
   </div>
 
   <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
+    <%= form.label :phone_cont, style: "display: block" %>
+    <%= form.text_field :phone_cont %>
   </div>
 
   <div>
@@ -30,42 +30,6 @@
 <% end %>
 
 
-<div id="customers">
-  <table>
-    <tr>
-      <th>Date</th>
-      <th>Name</th>
-      <th>Village</th>
-      <th>Bags</th>
-      <th>Phone</th>
-    </tr>
-
-    
-    <% @customers.each do |customer| %>
-      <tr>
-        <td>
-          <%= customer.created_at %>
-        </td>
-        <td> 
-          <%= customer.name %>
-        </td>
-        <td>
-          <%= customer.village %>
-        </td>
-        <td>
-          <%= customer.bags %>
-        </td>
-        <td>
-          <%= customer.phone %>
-        </td>
-        <td>
-          <p>
-            <%= link_to "Show this customer", customer %>
-          </p>
-        </td>
-      </tr>
-    <% end %>
-  </table>
-</div>
 
 <%= link_to "New customer", new_customer_path %>
+</div>
