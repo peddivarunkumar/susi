@@ -19,4 +19,16 @@
     <%= customer.phone %>
   </p>
 
+  <p>
+    <strong>Date:</strong>
+    <%= customer.date.strftime("%d/%m/%y") if not customer.date.nil? %>
+  </p>
+
+  <p>
+    <strong>comment:</strong>
+    <%= customer.comment %>
+  </p>
+
+
+
 </div>

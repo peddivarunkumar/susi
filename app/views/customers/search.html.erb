@@ -29,7 +29,7 @@
      <td><%= result.village %></td>
      <td><%= result.bags %></td>
      <td><%= result.phone %></td>
-     <td><%= result.created_at%></td>
+     <td><%= result.date.strftime("%d/%m/%y") if not result.date.nil?%></td>
      <td><%= link_to "show", customer_path(result)%></td>
    </tr>
 
